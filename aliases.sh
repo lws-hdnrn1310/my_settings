@@ -1,12 +1,12 @@
 #!/bin_zsh
 # about git
 alias ga='git add'
-alias gb='git branch'
+alias gb='git branch --sort=-authordate'
 alias gbc='git branch --show-current'
 alias gcm='git commit -m'
 alias gd='git diff'
 alias gf='git fetch'
-alias gm='git merge'
+alias gm='git_merge'
 alias gp='git pull'
 alias gp='git push'
 alias gs='git status'
