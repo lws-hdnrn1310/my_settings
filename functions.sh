@@ -39,6 +39,7 @@ function rails_test() {
 	local testcase=$(grep -n 'it ' "$file" | peco | awk -F ':' '{print $1}')
 
 	# テストケースが選択されなかった場合、処理を終了
+	# 選択したファイルのテストケース全てを実行する例) all → Enter
 	if [ -z "$testcase" ]; then
 		RAILS_ENV=test bundle exec rspec "${file}"
 	else
@@ -76,4 +77,4 @@ alias distinct='awk '\''!a[$0]++'\'
 function select-history() {
 		`history -n 1 | tac | distinct | peco`
 }
-bindkey '^r' peco-select-history
+bindkey '^r' select-history
